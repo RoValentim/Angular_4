@@ -1,0 +1,55 @@
+<div class="container"
+     fxLayout="row"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0">
+
+        <div fxFlex="40">
+                <md-card *ngIf="dish">
+                        <md-card-header>
+                                <md-card-title>
+                                        <h3> {{dish.name | uppercase}}</h3>
+                                </md-card-title>
+                        </md-card-header>
+                        <img md-card-image src="{{dish.image}}" alt="{{dish.name}}">
+                        <md-card-content>
+                                <p> {{dish.description}} </p>
+                        </md-card-content>
+                        <md-card-actions>
+                                <button md-button>LIKE</button>
+                                <button md-button>SHARE</button>
+                        </md-card-actions>
+                </md-card>
+        </div>
+
+        <div fxFlex="40">
+                <!-- <mat-list>
+                        <mat-list-item *ngFor="let d of dish.comments">
+                                <h1 mat-line>{{d.comment}}</h1>
+                                <h1 mat-line>{{d.rating}} </h1>
+                                <p mat-line>
+                                        <span>--{{d.author}} {{d.date | date}}</span>
+                                </p>
+                        </mat-list-item>
+                </mat-list> -->
+
+                <md-grid-list *ngIf="dish" cols="1" rowHeight="150px">
+                        <md-grid-tile>
+                                <div class="grid">
+                                        <h1>Comments</h1>
+                                </div>
+                        </md-grid-tile>
+                        <md-grid-tile *ngFor="let d of dish.comments">
+                                <div class="grid">
+                                        <p md-line>
+                                                {{d.comment}} <br />
+                                                {{d.rating}} Stars<br />
+                                                -- {{d.author}} {{d.date | date:'MMMM d, yyyy' : 'UTC'}}
+                                        </p>
+                                </div>
+                        </md-grid-tile>
+                </md-grid-list>
+        </div>
+</div>
