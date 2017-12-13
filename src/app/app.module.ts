@@ -17,32 +17,33 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import 'hammerjs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    DishdetailComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    FormsModule,
-    HttpModule,
-    MaterialModule,
-    AppRoutingModule
-  ],
-  providers: [DishService],
-  bootstrap: [AppComponent]
+        declarations: [
+                AppComponent,
+                MenuComponent,
+                DishdetailComponent,
+                HeaderComponent,
+                FooterComponent,
+                HomeComponent,
+                AboutComponent,
+                ContactComponent
+        ],
+        imports: [
+                BrowserModule,
+                BrowserAnimationsModule,
+                FlexLayoutModule,
+                FormsModule,
+                HttpModule,
+                MaterialModule,
+                AppRoutingModule
+        ],
+        providers: [DishService, PromotionService],
+        bootstrap: [AppComponent]
 })
 export class AppModule { }
