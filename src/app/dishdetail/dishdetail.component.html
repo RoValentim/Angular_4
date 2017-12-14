@@ -18,6 +18,7 @@
                                 <p> {{dish.description}} </p>
                         </md-card-content>
                         <md-card-actions>
+                                <button md-button (click)="goBack()">BACK</button>
                                 <button md-button>LIKE</button>
                                 <button md-button>SHARE</button>
                         </md-card-actions>
@@ -35,7 +36,7 @@
                         </mat-list-item>
                 </mat-list> -->
 
-                <md-grid-list *ngIf="dish" cols="1" rowHeight="150px">
+                <md-grid-list *ngIf="dish" cols="1" rowHeight="100px">
                         <md-grid-tile>
                                 <div class="grid">
                                         <h1>Comments</h1>
