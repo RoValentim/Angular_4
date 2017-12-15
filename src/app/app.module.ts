@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -43,7 +44,8 @@ import { LoginComponent } from './login/login.component';
                 FormsModule,
                 HttpModule,
                 MaterialModule,
-                AppRoutingModule
+                AppRoutingModule,
+                ReactiveFormsModule
         ],
         providers: [
                 DishService,
