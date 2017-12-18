@@ -25,7 +25,7 @@
                 </md-card>
         </div>
 
-        <div fxFlex="40">
+        <div fxFlex="40" *ngIf="dish">
                 <!-- <mat-list>
                         <mat-list-item *ngFor="let d of dish.comments">
                                 <h1 mat-line>{{d.comment}}</h1>
@@ -52,5 +52,9 @@
                                 </div>
                         </md-grid-tile>
                 </md-grid-list>
+        </div>
+        <div [hidden]="dish">
+                <md-spinner></md-spinner>
+                <h4>Loading... Please Wait</h4>
         </div>
 </div>
