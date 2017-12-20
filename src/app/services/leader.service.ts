@@ -7,11 +7,14 @@ import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class LeaderService {
 
-        constructor() { }
+        constructor() {
+                // constructor( private http: Http, private processHTTPMsgService: ProcessHTTPMsgService ) {
+        }
 
         getLeaders(): Observable<Leader[]> {
                 return Observable.of(LEADERS).delay(2000);
