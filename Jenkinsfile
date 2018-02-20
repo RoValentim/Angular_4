@@ -12,5 +12,10 @@ pipeline {
         sh 'find .'
       }
     }
+    stage('Aprovação') {
+      steps {
+        input 'Você aprova?'
+      }
+    }
   }
 }
